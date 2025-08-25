@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.cris.notes"
+    namespace = "com.cris.bluetoothapp"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.cris.notes"
+        applicationId = "com.cris.bluetoothapp"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -36,12 +36,20 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+
+    // Coroutines
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+
+    // Retrofit + OkHttp
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.okhttp)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
