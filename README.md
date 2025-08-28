@@ -24,8 +24,8 @@ An Android app that scans nearby Bluetooth devices and sends the discovered list
 ## ⚙️ Setup & Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/Notes_App.git
-   cd Notes-Bluetooth-Scanner
+   git clone https://github.com/Normie69K/Notes_App.git
+   cd Notes_App
 ````
 
 2. Open project in **Android Studio**
