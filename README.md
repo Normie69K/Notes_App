@@ -1,86 +1,63 @@
-# 📝 Notes App (Kotlin)
+````markdown
+# 📡 Notes Bluetooth Scanner
 
-A simple **Notes App** built with **Kotlin** for Android.
-This app allows users to **create, view, edit, and delete notes**, with all notes stored locally on the device. It follows **MVVM architecture** with Room Database for persistence.
+An Android app that scans nearby Bluetooth devices and sends the discovered list to a backend server.
 
 ---
 
 ## 🚀 Features
-
-* ➕ Add new notes with title & description
-* ✏️ Edit existing notes
-* 🗑️ Delete notes
-* 📋 View all notes in a **RecyclerView**
-* 💾 Local storage using **Room Database**
-* 🎨 Clean UI with **Material Design**
-* 🔄 Lifecycle-aware with **LiveData** and **ViewModel**
+- Enable/disable Bluetooth  
+- Start and stop device scanning  
+- Display current scan status  
+- Send discovered devices to backend using Retrofit  
 
 ---
 
 ## 🛠 Tech Stack
-
-* **Language:** Kotlin
-* **Architecture:** MVVM (Model–View–ViewModel)
-* **Database:** Room (SQLite)
-* **UI:** RecyclerView, CardView, Material Components
-* **Tools:** Android Studio, Git
-
----
-
-## 📸 Screenshots *(optional later)*
-
-*(Add app screenshots here once UI is ready)*
-
----
-
-## 📂 Project Structure
-
-```
-com.example.notesapp
-│
-├── data
-│   ├── Note.kt
-│   ├── NoteDao.kt
-│   ├── NoteDatabase.kt
-│
-├── repository
-│   └── NoteRepository.kt
-│
-├── ui
-│   ├── MainActivity.kt
-│   ├── AddEditNoteActivity.kt
-│   ├── NoteAdapter.kt
-│   └── viewmodel
-│       └── NoteViewModel.kt
-│
-└── utils
-```
+- **Language:** Kotlin  
+- **UI:** ConstraintLayout  
+- **Networking:** Retrofit + Gson  
+- **Bluetooth:** Android Bluetooth API  
 
 ---
 
 ## ⚙️ Setup & Installation
-
-1. Clone this repository:
-
+1. Clone the repository:
    ```bash
-   git clone https://github.com/Normie69K/Notes_App.git
+   git clone https://github.com/yourusername/Notes_App.git
+   cd Notes-Bluetooth-Scanner
+````
+
+2. Open project in **Android Studio**
+3. Update backend API URL in `Constants.kt`:
+
+   ```kotlin
+   object Constants {
+       const val BASE_URL = "http://your-server-ip:port/"
+   }
    ```
-2. Open in **Android Studio**.
-3. Sync Gradle & run on an emulator/device.
+4. Connect a real Android device (Bluetooth required)
+5. Build & run the project
 
 ---
 
-## 📖 Learning Outcomes
+## 🔑 Required Permissions
 
-* Android **Activity lifecycle**
-* **Room Database** & CRUD operations
-* **RecyclerView** with custom adapters
-* MVVM architecture with **LiveData & ViewModel**
-* Building Android apps with **Kotlin**
+Add these to your `AndroidManifest.xml`:
 
----
+```xml
+<uses-permission android:name="android.permission.BLUETOOTH"/>
+<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
-## 📜 License
+<!-- For Android 12+ -->
+<uses-permission android:name="android.permission.BLUETOOTH_SCAN" android:usesPermissionFlags="neverForLocation"/>
+<uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+```
 
-This project is open-source. Feel free to use and improve it!
+## 📄 License
 
+This project is licensed under the **MIT License**.
+
+```
+```
