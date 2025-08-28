@@ -55,9 +55,3 @@ Add these to your `AndroidManifest.xml`:
 <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
 ```
 
-## 📄 License
-
-This project is licensed under the **MIT License**.
-
-```
-```
